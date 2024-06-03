@@ -1,0 +1,3 @@
+gcc 31.c -o 30
+31.c -> source
+31   -> programme

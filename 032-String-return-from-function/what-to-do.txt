@@ -1,0 +1,3 @@
+gcc 32.c -o 32
+32.c -> source
+32   -> programme

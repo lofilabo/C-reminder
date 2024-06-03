@@ -1,0 +1,3 @@
+gcc 26.c -o 26
+26.c -> source
+26   -> programme

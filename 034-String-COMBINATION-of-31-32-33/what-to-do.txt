@@ -1,0 +1,9 @@
+
+where 1 < x < 3
+for (x=1; x<=3; x++){
+	gcc 3x.c -o 3x
+	3x.c -> source
+	3x   -> programme
+}
+
+

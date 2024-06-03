@@ -1,0 +1,3 @@
+gcc 23.c -o 23
+23.c -> source
+23   -> programme
