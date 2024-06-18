@@ -18,6 +18,3 @@ gcc -o 1 1.c -lsqlite3 -std=c99
 and then, re-refined:
 
 gcc 1.c -o 1 -lsqlite3 -std=c99
-gcc 1.c -o 1 -lsqlite3
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ definitive right now

@@ -5,34 +5,14 @@
 
 
 static int callback(void *data, int argc, char **argv, char **azColName){
-
-	int i;
-	//fprintf(stderr, "%s: ", (const char*)data);/* print the 'Callback function...' message */
-
-	//Unpack this to restore the Original way
-	/*
-	for(i = 0; i<argc; i++){
-		printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
-	}
-	*/
-
-
-	/* 
-	my ver.
-	try to get data only, , and ; format
-	*/
-	//printf("%s\n", argv[0] );
-	char str[80];
-
-
-	//Unpack this to use my version --
-	//to store to an aa,bb,cc;xx,yy,zz; text file
-	for(i = 0; i<argc; i++){
-		printf("%s\n", argv[i] );
-		//strcpy(str, argv[i]);
-	}
+   int i;
+   fprintf(stderr, "%s: ", (const char*)data);
+   
+   for(i = 0; i<argc; i++){
+      printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
+   }
+   
    printf("\n");
-   //printf(str);
    return 0;
 }
 
@@ -42,21 +22,18 @@ int main(int argc, char* argv[]) {
    char *zErrMsg = 0;
    int rc;
    char *sql;
-//   const char* data = "";
-   const char* data = "Callback function called";
+   const char* data = "Callback function called\n";
 
    rc = sqlite3_open("test.db", &db);
 /*  CRUD Create, Read(x2), Update, Delete */
 //	sql = "INSERT INTO testtable (id,info) VALUES (8, 'eight' );";
-//	sql = "SELECT * from testtable;";
-	sql = "SELECT * from testtable WHERE id=2;";
+	sql = "SELECT * from testtable;";
+//	sql = "SELECT * from testtable WHERE id=2;";
 //	sql = "UPDATE testtable set info = 'update 4' where id=4;";
 //	sql = "DELETE from testtable where id=4;";
 
 
-	rc = sqlite3_exec(db, sql, callback, (void*)data, &zErrMsg);
-	/*what is 'data' ????*/
-
+   rc = sqlite3_exec(db, sql, callback, (void*)data, &zErrMsg);
    sqlite3_close(db);
    return 0;
 }
