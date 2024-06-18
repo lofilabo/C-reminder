@@ -1,0 +1,20 @@
+gcc 1.c -o 1
+
+just for now:
+cpp 1.c -o 1
+
+1.c -> source
+1   -> programme
+
+
+sudo apt-get install libsqlite3-dev
+
+chmod 777 1
+
+THIS WORKED ONCE:
+
+gcc -o 1 1.c -lsqlite3 -std=c99
+
+and then, re-refined:
+
+gcc 1.c -o 1 -lsqlite3 -std=c99
