@@ -1,0 +1,94 @@
+what is this?
+
+A system with 2 programmes.
+
+0.
+
+IN THIS DIRECTORY, we have:
+
+1 + 1.c --- new SQL-handling programme on Sqlite
+
+check + check.c  --- little test programme to 'practice'
+
+notes-for-you....  This!!
+
+what-to-do.txt -- old text file.
+
+test.db  --- SQLite database file
+
+zoe_data.txt --- small text data, to work around the fact that 
+                 there is no Return is available from execv
+
+1.
+
+check.c
+
+The part that will be 'incorporated' into the Big programme.
+
+
+
+2.
+
+1.c
+
+The part which will be 'independant', and 'called' by the first.
+
+THIS is the one which works with SQLinte,
+
+retrurnd results
+
+which are of the:
+
+1:one;2:two;3:three; variety.
+
+NOTE THAT:
+*It does SQL stuff by-itself
+
+
+
+1b.
+
+i. Compiling
+
+gcc check.c -o check
+(compile check.c to check, which is executable)
+
+ii/ Executing
+
+./check
+
+This RUNS ./1 , and, in the future may be able to accept a returned result.
+
+
+
+2b.
+Running the 'idependent' programme:
+
+i. Compiling
+
+gcc 1.c -o 1 -lsqlite3
+
+
+ii. Executing
+
+./1 "SELECT * from testtable where id <> 2"
+
+(the programme [./1] accepts a string with SQL in it.
+
+The results are displayed on screen.
+
+
+STATE OF PLAY
+
+1. Does add new records.
+
+2. Will 'run' SQL to Extract, but execv will not return.
+
+WE ARE GETTING AROUND THIS BY:
+
+Writing the results into the file zoedata.txt
+
+THIS NEEDS TO BE EMBETTERED IN THE FUTURE....
+
+
+
