@@ -47,7 +47,7 @@ char* main(int argc, char* argv[]) {
 		int rc;
 		char *sql;
 		const char* data = "Callback function called";
-		rc = sqlite3_open("./zoedata.db", &db);
+		rc = sqlite3_open("./zdb_data.db", &db);
 		/*
 		CRUD Create, Read(x2), Update, Delete 
 		examples of the SQL to pass in at ./1 "some-sql-here"
@@ -63,7 +63,7 @@ char* main(int argc, char* argv[]) {
 		printf("%s\n",str);
 		sqlite3_close(db);
 
-char *filename = "zoe_output_data.txt";/*Open file*/
+char *filename = "zdb_output_data.txt";/*Open file*/
 FILE *fp = fopen(filename, "w");
 fprintf(fp,  str);
 

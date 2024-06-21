@@ -40,7 +40,7 @@ gcc zdb_check.c -o zdb_check
  |        ^                           |
  |        |                           |
  |         ----<--STORAGE-----<-----<-
- |           [zoe_output_data.txt]
+ |           [zdb_data.txt]
  |         storage is in text file -- NOT PASSED BACK BY RETURN.
  |         *<--{ because the instruction which carries out getting-data.
  |         does not Deal With 'returning' the results, we WRITE THE
@@ -51,6 +51,7 @@ gcc zdb_check.c -o zdb_check
                          be carried out by the 'new' programme.
 
 
+Can't repeat this enough - there is NO WAY to RETURN from execv.  So we store the data in a text file.
 
 
 
