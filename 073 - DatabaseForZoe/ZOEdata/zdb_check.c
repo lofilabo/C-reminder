@@ -57,11 +57,11 @@ int main()
 	into a static char for use by execv()
 
 	*/
-	 char mysqlYYY1[] = "INSERT INTO testtable (id,info) VALUES (6, 'six' );";
+	 char mysqlYYY1[] = "INSERT INTO testtable (id,info) VALUES (7, 'seven' );";
 	 char mysqlYYY2[] = "SELECT * from testtable;";
-	 char mysqlYYY3[] = "SELECT * from testtable WHERE id=2;";
-	 char mysqlYYY4[] = "UPDATE testtable set info = 'two' where id=2;";
-	 char mysqlYYY5[] = "DELETE from testtable where id=6;";
+	 char mysqlYYY3[] = "SELECT * from testtable WHERE id=7;";
+	 char mysqlYYY4[] = "UPDATE testtable set info = 'SEVVVUN' where id=7;";
+	 char mysqlYYY5[] = "DELETE from testtable where id=7;";
 
 
 	/*
@@ -73,10 +73,10 @@ int main()
 	from  mysqlYYY1 to mysqlYYY5  */
 
 	//strcpy(mysqlZZZ, mysqlYYY1); 	//to INSERT   
-	strcpy(mysqlZZZ, mysqlYYY2);  //to SELECT all  
-	//strcpy(mysqlZZZ, mysqlYYY3);    //to SELECT 1  
+	//strcpy(mysqlZZZ, mysqlYYY2);  	//to SELECT all  
+	//strcpy(mysqlZZZ, mysqlYYY3);  //to SELECT 1  
 	//strcpy(mysqlZZZ, mysqlYYY4);  //to UPDATE 
-	//strcpy(mysqlZZZ, mysqlYYY5);  //to DELETE 
+	strcpy(mysqlZZZ, mysqlYYY5);  //to DELETE 
 
 	/* Do Not Forget - here, we are copying 'standard' str into 'special' str (static)
 

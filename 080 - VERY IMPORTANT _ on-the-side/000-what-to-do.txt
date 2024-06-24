@@ -1,0 +1,37 @@
+version of working-on-the-side
+
+This 'problem' STOPS programmes.
+
+so......
+
+run on the side!
+
+take a look at THIS::
+
+	zdb_check.c
+
+
+you will see 
+
+execv("./zdb_basement",argv1);
+
+execv would normally 'hang up' the programme.
+Here, we give it its 'own slot':
+
+   pid_t pid=fork();
+   if (pid==0) { /* child process */
+	/*
+	stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff 
+
+	example of stoppy thing:
+		execv("./zdb_basement",argv1);
+	stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff 
+	*/
+        printf("%s\n","maybe captured here.");
+    }
+    else { /* pid!=0; parent process */
+        waitpid(pid,0,0); /* wait for child to exit */
+    }
+    printf("%s\n","You Escaped!");
+
+"You Escaped!" will show!
